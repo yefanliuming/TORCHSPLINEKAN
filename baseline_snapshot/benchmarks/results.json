@@ -1,0 +1,110 @@
+{
+  "env": {
+    "torch_version": "2.7.1+cu118",
+    "cuda_available": true,
+    "python": "3.9.23",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "cuda_version": "11.8",
+    "driver": "11.8"
+  },
+  "results": [
+    {
+      "batch": 32,
+      "I": 16,
+      "O": 16,
+      "G": 5,
+      "k": 3,
+      "ref_fwd_ms": 0.276,
+      "ref_fwdbwd_ms": 0.697,
+      "compiled_ref_fwd_ms": 0.073,
+      "cuda_fwd_ms": 0.015,
+      "cuda_fwdbwd_ms": 0.169,
+      "cuda_peak_mb": 17.1,
+      "speedup_fwd": 18.54
+    },
+    {
+      "batch": 256,
+      "I": 64,
+      "O": 64,
+      "G": 5,
+      "k": 3,
+      "ref_fwd_ms": 0.888,
+      "ref_fwdbwd_ms": 2.075,
+      "compiled_ref_fwd_ms": 0.227,
+      "cuda_fwd_ms": 0.031,
+      "cuda_fwdbwd_ms": 0.151,
+      "cuda_peak_mb": 18.36,
+      "speedup_fwd": 28.97
+    },
+    {
+      "batch": 1024,
+      "I": 64,
+      "O": 64,
+      "G": 5,
+      "k": 3,
+      "ref_fwd_ms": 3.161,
+      "ref_fwdbwd_ms": 5.808,
+      "compiled_ref_fwd_ms": 0.717,
+      "cuda_fwd_ms": 0.037,
+      "cuda_fwdbwd_ms": 0.159,
+      "cuda_peak_mb": 20.91,
+      "speedup_fwd": 86.13
+    },
+    {
+      "batch": 256,
+      "I": 256,
+      "O": 256,
+      "G": 5,
+      "k": 3,
+      "ref_fwd_ms": 2.684,
+      "ref_fwdbwd_ms": 6.285,
+      "compiled_ref_fwd_ms": 0.818,
+      "cuda_fwd_ms": 0.05,
+      "cuda_fwdbwd_ms": 0.165,
+      "cuda_peak_mb": 27.81,
+      "speedup_fwd": 54.21
+    },
+    {
+      "batch": 256,
+      "I": 64,
+      "O": 64,
+      "G": 16,
+      "k": 3,
+      "ref_fwd_ms": 1.005,
+      "ref_fwdbwd_ms": 2.833,
+      "compiled_ref_fwd_ms": 0.321,
+      "cuda_fwd_ms": 0.033,
+      "cuda_fwdbwd_ms": 0.191,
+      "cuda_peak_mb": 19.62,
+      "speedup_fwd": 30.75
+    },
+    {
+      "batch": 256,
+      "I": 64,
+      "O": 64,
+      "G": 64,
+      "k": 3,
+      "ref_fwd_ms": 4.02,
+      "ref_fwdbwd_ms": 8.954,
+      "compiled_ref_fwd_ms": 0.665,
+      "cuda_fwd_ms": 0.072,
+      "cuda_fwdbwd_ms": 0.188,
+      "cuda_peak_mb": 25.15,
+      "speedup_fwd": 56.18
+    },
+    {
+      "batch": 1,
+      "I": 16,
+      "O": 16,
+      "G": 5,
+      "k": 3,
+      "ref_fwd_ms": 0.142,
+      "ref_fwdbwd_ms": 0.304,
+      "compiled_ref_fwd_ms": 0.03,
+      "cuda_fwd_ms": 0.025,
+      "cuda_fwdbwd_ms": 0.197,
+      "cuda_peak_mb": 17.07,
+      "speedup_fwd": 5.62
+    }
+  ]
+}

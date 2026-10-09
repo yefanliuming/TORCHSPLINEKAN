@@ -1,0 +1,103 @@
+{
+  "task": "f=exp(sin(pi x1)+x2^2)+0.5 x3, x4 unused; x~U[-1,1]^4; 4096 train / 4096 val",
+  "args": {
+    "output": "/home/hy/data/DB/projects/torch-spline-kan/benchmarks/results_pruning.json",
+    "hidden": 64,
+    "steps": 3000,
+    "finetune": 1000,
+    "lam": 0.001,
+    "threshold": 0.01,
+    "seed": 0
+  },
+  "train_log": [
+    [
+      0,
+      5.277996063232422,
+      0.02645067870616913
+    ],
+    [
+      500,
+      0.00017210366786457598,
+      0.018153516575694084
+    ],
+    [
+      1000,
+      0.0021112868562340736,
+      0.009805271402001381
+    ],
+    [
+      1500,
+      0.0002431313623674214,
+      0.006373950280249119
+    ],
+    [
+      2000,
+      0.00010024152288679034,
+      0.005846481304615736
+    ],
+    [
+      2500,
+      0.00011725284275598824,
+      0.0057691410183906555
+    ]
+  ],
+  "dense_sparsified": {
+    "val_rmse": 0.018115494400262833,
+    "train_s": 2.875954879913479,
+    "params": 3200,
+    "widths": [
+      4,
+      64,
+      1
+    ],
+    "train_step_ms": 0.8413934847339988,
+    "infer_ms": 0.12375693768262863,
+    "train_step_peak_inc_MiB": 27.6015625,
+    "infer_peak_inc_MiB": 10.048828125
+  },
+  "pruned_no_finetune": {
+    "val_rmse": 0.041669730097055435,
+    "widths_before": [
+      4,
+      64,
+      1
+    ],
+    "widths_after": [
+      4,
+      2,
+      1
+    ],
+    "params_before": 3200,
+    "params_after": 100,
+    "kept": [
+      [
+        2,
+        8
+      ]
+    ],
+    "threshold": 0.01
+  },
+  "pruned_finetuned": {
+    "val_rmse": 0.008605469949543476,
+    "finetune_s": 0.6154862709809095,
+    "params": 100,
+    "widths": [
+      4,
+      2,
+      1
+    ],
+    "train_step_ms": 0.852800440043211,
+    "infer_ms": 0.05774793680757284,
+    "train_step_peak_inc_MiB": 1.44140625,
+    "infer_peak_inc_MiB": 0.65673828125
+  },
+  "dense_finetuned_same_steps": {
+    "val_rmse": 0.00602696742862463,
+    "finetune_s": 0.6142159658484161
+  },
+  "env": {
+    "torch": "2.7.1+cu118",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "command": "/home/hy/miniconda3/envs/dgsm-yolo11/bin/python benchmarks/exp_pruning.py"
+  }
+}

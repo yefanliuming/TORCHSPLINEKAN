@@ -1,0 +1,265 @@
+{
+  "env": {
+    "torch": "2.7.1+cu118",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "command": "/home/hy/miniconda3/envs/dgsm-yolo11/bin/python benchmarks/bench_export.py"
+  },
+  "results": [
+    {
+      "config": "KAN-16-32-8",
+      "backend": "cuda",
+      "params_original": 7680,
+      "params_exported": 6912,
+      "file_bytes_original": 40389,
+      "file_bytes_exported": 36549,
+      "per_batch": {
+        "1": {
+          "max_abs_diff": 0.0,
+          "max_abs_output": 0.12603037059307098,
+          "original": {
+            "median_ms": 0.05761208012700081,
+            "std_ms": 0.002492526369739322,
+            "peak_increment_MiB": 0.01806640625
+          },
+          "exported": {
+            "median_ms": 0.050708651542663574,
+            "std_ms": 0.0013087853531599518,
+            "peak_increment_MiB": 0.00341796875
+          }
+        },
+        "256": {
+          "max_abs_diff": 0.0,
+          "max_abs_output": 0.3173392117023468,
+          "original": {
+            "median_ms": 0.05453603807836771,
+            "std_ms": 0.04202318214659236,
+            "peak_increment_MiB": 0.34375
+          },
+          "exported": {
+            "median_ms": 0.048189074732363224,
+            "std_ms": 0.0315390078099856,
+            "peak_increment_MiB": 0.3359375
+          }
+        },
+        "4096": {
+          "max_abs_diff": 0.0,
+          "max_abs_output": 0.2983713448047638,
+          "original": {
+            "median_ms": 0.06266648415476084,
+            "std_ms": 0.0030070546346964403,
+            "peak_increment_MiB": 5.3828125
+          },
+          "exported": {
+            "median_ms": 0.05768693517893553,
+            "std_ms": 0.0007456848526066267,
+            "peak_increment_MiB": 5.375
+          }
+        }
+      }
+    },
+    {
+      "config": "KAN-16-32-8",
+      "backend": "reference",
+      "params_original": 7680,
+      "params_exported": 6912,
+      "file_bytes_original": 40389,
+      "file_bytes_exported": 36549,
+      "per_batch": {
+        "1": {
+          "max_abs_diff": 0.0,
+          "max_abs_output": 0.12603038549423218,
+          "original": {
+            "median_ms": 0.5491423653438687,
+            "std_ms": 0.05316974492388073,
+            "peak_increment_MiB": 0.017578125
+          },
+          "exported": {
+            "median_ms": 0.5460770335048437,
+            "std_ms": 0.06462520618517863,
+            "peak_increment_MiB": 0.01708984375
+          }
+        },
+        "256": {
+          "max_abs_diff": 0.0,
+          "max_abs_output": 0.3173392117023468,
+          "original": {
+            "median_ms": 0.557473860681057,
+            "std_ms": 0.06351535152539478,
+            "peak_increment_MiB": 1.9833984375
+          },
+          "exported": {
+            "median_ms": 0.551487086340785,
+            "std_ms": 0.028137108401052165,
+            "peak_increment_MiB": 1.9833984375
+          }
+        },
+        "4096": {
+          "max_abs_diff": 0.0,
+          "max_abs_output": 0.2983713150024414,
+          "original": {
+            "median_ms": 0.5587316118180752,
+            "std_ms": 0.07677738940971195,
+            "peak_increment_MiB": 31.6318359375
+          },
+          "exported": {
+            "median_ms": 0.5515870871022344,
+            "std_ms": 0.05983116263692738,
+            "peak_increment_MiB": 31.6318359375
+          }
+        }
+      }
+    },
+    {
+      "config": "KAN-256-256-256",
+      "backend": "cuda",
+      "params_original": 1310720,
+      "params_exported": 1179648,
+      "file_bytes_original": 5297157,
+      "file_bytes_exported": 4772037,
+      "per_batch": {
+        "1": {
+          "max_abs_diff": 0.0,
+          "max_abs_output": 0.8184521198272705,
+          "original": {
+            "median_ms": 0.05237199366092682,
+            "std_ms": 0.0017426348821119497,
+            "peak_increment_MiB": 2.0126953125
+          },
+          "exported": {
+            "median_ms": 0.04735705442726612,
+            "std_ms": 0.011908830150627223,
+            "peak_increment_MiB": 0.0126953125
+          }
+        },
+        "1024": {
+          "max_abs_diff": 0.0,
+          "max_abs_output": 1.2639379501342773,
+          "original": {
+            "median_ms": 0.1421158667653799,
+            "std_ms": 0.04565322514875758,
+            "peak_increment_MiB": 15.0
+          },
+          "exported": {
+            "median_ms": 0.1368061639368534,
+            "std_ms": 0.002036459561129138,
+            "peak_increment_MiB": 13.0
+          }
+        }
+      }
+    },
+    {
+      "config": "KAN-256-256-256",
+      "backend": "reference",
+      "params_original": 1310720,
+      "params_exported": 1179648,
+      "file_bytes_original": 5297157,
+      "file_bytes_exported": 4772037,
+      "per_batch": {
+        "1": {
+          "max_abs_diff": 0.0,
+          "max_abs_output": 0.818452000617981,
+          "original": {
+            "median_ms": 0.5565115716308355,
+            "std_ms": 0.028249561857508262,
+            "peak_increment_MiB": 2.01171875
+          },
+          "exported": {
+            "median_ms": 0.5461520049721003,
+            "std_ms": 0.06089766308101682,
+            "peak_increment_MiB": 0.1064453125
+          }
+        },
+        "1024": {
+          "max_abs_diff": 0.0,
+          "max_abs_output": 1.263938069343567,
+          "original": {
+            "median_ms": 0.718201044946909,
+            "std_ms": 0.053655936782764924,
+            "peak_increment_MiB": 64.0439453125
+          },
+          "exported": {
+            "median_ms": 0.7217630045488477,
+            "std_ms": 0.07570909860107591,
+            "peak_increment_MiB": 64.0439453125
+          }
+        }
+      }
+    },
+    {
+      "config": "KAN-64-64-G64",
+      "backend": "cuda",
+      "params_original": 565248,
+      "params_exported": 557056,
+      "file_bytes_original": 2338757,
+      "file_bytes_exported": 2305221,
+      "per_batch": {
+        "1": {
+          "max_abs_diff": 0.0,
+          "max_abs_output": 0.1589851677417755,
+          "original": {
+            "median_ms": 0.05470099858939648,
+            "std_ms": 0.0020550422674243175,
+            "peak_increment_MiB": 1.06591796875
+          },
+          "exported": {
+            "median_ms": 0.04877499304711819,
+            "std_ms": 0.02397328216937473,
+            "peak_increment_MiB": 0.01904296875
+          }
+        },
+        "1024": {
+          "max_abs_diff": 0.0,
+          "max_abs_output": 0.2971145510673523,
+          "original": {
+            "median_ms": 0.306354952044785,
+            "std_ms": 0.03563243718474471,
+            "peak_increment_MiB": 19.046875
+          },
+          "exported": {
+            "median_ms": 0.3009600332006812,
+            "std_ms": 0.024149584454991886,
+            "peak_increment_MiB": 18.0
+          }
+        }
+      }
+    },
+    {
+      "config": "KAN-64-64-G64",
+      "backend": "reference",
+      "params_original": 565248,
+      "params_exported": 557056,
+      "file_bytes_original": 2338757,
+      "file_bytes_exported": 2305221,
+      "per_batch": {
+        "1": {
+          "max_abs_diff": 0.0,
+          "max_abs_output": 0.1589851826429367,
+          "original": {
+            "median_ms": 0.5497488891705871,
+            "std_ms": 0.02752472956250036,
+            "peak_increment_MiB": 1.0654296875
+          },
+          "exported": {
+            "median_ms": 0.5459316307678819,
+            "std_ms": 0.022686445049619326,
+            "peak_increment_MiB": 0.18115234375
+          }
+        },
+        "1024": {
+          "max_abs_diff": 0.0,
+          "max_abs_output": 0.2971145510673523,
+          "original": {
+            "median_ms": 1.243422506377101,
+            "std_ms": 0.06989713310546694,
+            "peak_increment_MiB": 107.3271484375
+          },
+          "exported": {
+            "median_ms": 1.2371294433251023,
+            "std_ms": 0.06976089295115873,
+            "peak_increment_MiB": 107.3271484375
+          }
+        }
+      }
+    }
+  ]
+}

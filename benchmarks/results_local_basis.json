@@ -1,0 +1,465 @@
+{
+  "env": {
+    "torch": "2.7.1+cu118",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "ext": "/home/hy/data/DB/projects/torch-spline-kan/spline_kan/_C.cpython-39-x86_64-linux-gnu.so",
+    "command": "/home/hy/miniconda3/envs/dgsm-yolo11/bin/python benchmarks/bench_local_basis.py"
+  },
+  "results": [
+    {
+      "B": 1,
+      "I": 16,
+      "O": 16,
+      "G": 5,
+      "k": 3,
+      "spline_weight_bytes": 8192,
+      "horner_coeff_bytes_fp32": 20480,
+      "horner_note": "piecewise-polynomial form of the folded spline: G intervals x (k+1) coefficients per edge (vs G+k B-spline coefficients); not implemented",
+      "recurrence": {
+        "basis_kernel_ms": 0.008182299999999986,
+        "infer": {
+          "wall_median_ms": 0.05056441295892,
+          "wall_std_ms": 0.005245154621943084,
+          "event_median_ms": 0.04201599955558777,
+          "event_std_ms": 0.0028263237886096324,
+          "peak_inc_MiB": 0.01025390625,
+          "gpu_kernel_ms": 0.02023854999999996
+        },
+        "fwd_bwd_grad_x": {
+          "wall_median_ms": 0.1919870264828205,
+          "wall_std_ms": 0.0073866903219982245,
+          "event_median_ms": 0.18243199586868286,
+          "event_std_ms": 0.006106071406581735,
+          "peak_inc_MiB": 0.02490234375,
+          "gpu_kernel_ms": 0.07408684999999968
+        },
+        "fwd_bwd_no_grad_x": {
+          "wall_median_ms": 0.13706309255212545,
+          "wall_std_ms": 0.006511708235867976,
+          "event_median_ms": 0.12718400359153748,
+          "event_std_ms": 0.005393485363418841,
+          "peak_inc_MiB": 0.025390625,
+          "gpu_kernel_ms": 0.04137994999999983
+        }
+      },
+      "local": {
+        "basis_kernel_ms": 0.002614750000000015,
+        "basis_grad_kernel_ms": 0.0029061499999999962,
+        "infer": {
+          "wall_median_ms": 0.0492720864713192,
+          "wall_std_ms": 0.0052109072597559345,
+          "event_median_ms": 0.04073600098490715,
+          "event_std_ms": 0.0037680342135563475,
+          "peak_inc_MiB": 0.01025390625,
+          "gpu_kernel_ms": 0.014445100000000021
+        },
+        "fwd_bwd_grad_x": {
+          "wall_median_ms": 0.18236704636365175,
+          "wall_std_ms": 0.005931250323340415,
+          "event_median_ms": 0.17268799990415573,
+          "event_std_ms": 0.0048642580808579625,
+          "peak_inc_MiB": 0.02490234375,
+          "gpu_kernel_ms": 0.05694044999999984
+        },
+        "fwd_bwd_no_grad_x": {
+          "wall_median_ms": 0.13821711763739586,
+          "wall_std_ms": 0.008366697208751628,
+          "event_median_ms": 0.12889600545167923,
+          "event_std_ms": 0.007358550424995167,
+          "peak_inc_MiB": 0.025390625,
+          "gpu_kernel_ms": 0.03570995000000004
+        }
+      }
+    },
+    {
+      "B": 256,
+      "I": 64,
+      "O": 64,
+      "G": 5,
+      "k": 3,
+      "spline_weight_bytes": 131072,
+      "horner_coeff_bytes_fp32": 327680,
+      "horner_note": "piecewise-polynomial form of the folded spline: G intervals x (k+1) coefficients per edge (vs G+k B-spline coefficients); not implemented",
+      "recurrence": {
+        "basis_kernel_ms": 0.013363400000000001,
+        "infer": {
+          "wall_median_ms": 0.05007185973227024,
+          "wall_std_ms": 0.004887040591083915,
+          "event_median_ms": 0.04177600145339966,
+          "event_std_ms": 0.0032711261711604366,
+          "peak_inc_MiB": 0.875,
+          "gpu_kernel_ms": 0.030190200000000042
+        },
+        "fwd_bwd_grad_x": {
+          "wall_median_ms": 0.19634095951914787,
+          "wall_std_ms": 0.0558552517832051,
+          "event_median_ms": 0.18715199828147888,
+          "event_std_ms": 0.05271696007544805,
+          "peak_inc_MiB": 2.1884765625,
+          "gpu_kernel_ms": 0.10333445000000004
+        },
+        "fwd_bwd_no_grad_x": {
+          "wall_median_ms": 0.13997056521475315,
+          "wall_std_ms": 0.005502790762081539,
+          "event_median_ms": 0.1308640018105507,
+          "event_std_ms": 0.004090461414290129,
+          "peak_inc_MiB": 0.9384765625,
+          "gpu_kernel_ms": 0.06196280000000005
+        }
+      },
+      "local": {
+        "basis_kernel_ms": 0.004042149999999995,
+        "basis_grad_kernel_ms": 0.003277250000000004,
+        "infer": {
+          "wall_median_ms": 0.049350899644196033,
+          "wall_std_ms": 0.0032429028637358864,
+          "event_median_ms": 0.041360000148415565,
+          "event_std_ms": 0.0014578165402518574,
+          "peak_inc_MiB": 0.875,
+          "gpu_kernel_ms": 0.02151099999999999
+        },
+        "fwd_bwd_grad_x": {
+          "wall_median_ms": 0.19056349992752075,
+          "wall_std_ms": 0.02630354706807994,
+          "event_median_ms": 0.18169600516557693,
+          "event_std_ms": 0.02536006985814042,
+          "peak_inc_MiB": 1.6259765625,
+          "gpu_kernel_ms": 0.08034619999999978
+        },
+        "fwd_bwd_no_grad_x": {
+          "wall_median_ms": 0.14205498155206442,
+          "wall_std_ms": 0.051661203125019636,
+          "event_median_ms": 0.1329599991440773,
+          "event_std_ms": 0.046164825080472316,
+          "peak_inc_MiB": 0.9384765625,
+          "gpu_kernel_ms": 0.052649899999999944
+        }
+      }
+    },
+    {
+      "B": 1024,
+      "I": 256,
+      "O": 256,
+      "G": 5,
+      "k": 3,
+      "spline_weight_bytes": 2097152,
+      "horner_coeff_bytes_fp32": 5242880,
+      "horner_note": "piecewise-polynomial form of the folded spline: G intervals x (k+1) coefficients per edge (vs G+k B-spline coefficients); not implemented",
+      "recurrence": {
+        "basis_kernel_ms": 0.08817669999999997,
+        "infer": {
+          "wall_median_ms": 0.15976105351001024,
+          "wall_std_ms": 0.002980101102280337,
+          "event_median_ms": 0.1515199989080429,
+          "event_std_ms": 0.0011748696577914294,
+          "peak_inc_MiB": 14.0,
+          "gpu_kernel_ms": 0.14237279999999997
+        },
+        "fwd_bwd_grad_x": {
+          "wall_median_ms": 0.39337296038866043,
+          "wall_std_ms": 0.00401743965558436,
+          "event_median_ms": 0.38462400436401367,
+          "event_std_ms": 0.0027115102239905816,
+          "peak_inc_MiB": 35.0009765625,
+          "gpu_kernel_ms": 0.37377859999999974
+        },
+        "fwd_bwd_no_grad_x": {
+          "wall_median_ms": 0.24262559600174427,
+          "wall_std_ms": 0.0026341486729837232,
+          "event_median_ms": 0.23340800404548645,
+          "event_std_ms": 0.0013993666089891351,
+          "peak_inc_MiB": 15.0009765625,
+          "gpu_kernel_ms": 0.21306229999999976
+        }
+      },
+      "local": {
+        "basis_kernel_ms": 0.01936765,
+        "basis_grad_kernel_ms": 0.007029900000000002,
+        "infer": {
+          "wall_median_ms": 0.09064015466719866,
+          "wall_std_ms": 0.0027962711875912046,
+          "event_median_ms": 0.08271999657154083,
+          "event_std_ms": 0.000987370394567855,
+          "peak_inc_MiB": 14.0,
+          "gpu_kernel_ms": 0.07334840000000005
+        },
+        "fwd_bwd_grad_x": {
+          "wall_median_ms": 0.2667495282366872,
+          "wall_std_ms": 0.00728685440271838,
+          "event_median_ms": 0.25547200441360474,
+          "event_std_ms": 0.006302192091120051,
+          "peak_inc_MiB": 26.0009765625,
+          "gpu_kernel_ms": 0.20557349999999988
+        },
+        "fwd_bwd_no_grad_x": {
+          "wall_median_ms": 0.16610894817858934,
+          "wall_std_ms": 0.014666144123705746,
+          "event_median_ms": 0.15769600123167038,
+          "event_std_ms": 0.013586610594649383,
+          "peak_inc_MiB": 15.0009765625,
+          "gpu_kernel_ms": 0.14350759999999976
+        }
+      }
+    },
+    {
+      "B": 4096,
+      "I": 256,
+      "O": 256,
+      "G": 5,
+      "k": 3,
+      "spline_weight_bytes": 2097152,
+      "horner_coeff_bytes_fp32": 5242880,
+      "horner_note": "piecewise-polynomial form of the folded spline: G intervals x (k+1) coefficients per edge (vs G+k B-spline coefficients); not implemented",
+      "recurrence": {
+        "basis_kernel_ms": 0.3271932,
+        "infer": {
+          "wall_median_ms": 0.49224006943404675,
+          "wall_std_ms": 0.0029966795601397704,
+          "event_median_ms": 0.4841119945049286,
+          "event_std_ms": 0.0014804152764661702,
+          "peak_inc_MiB": 50.0,
+          "gpu_kernel_ms": 0.47422469999999994
+        },
+        "fwd_bwd_grad_x": {
+          "wall_median_ms": 1.2510790256783366,
+          "wall_std_ms": 0.0074995764400076275,
+          "event_median_ms": 1.241711974143982,
+          "event_std_ms": 0.004990181857674488,
+          "peak_inc_MiB": 134.0009765625,
+          "gpu_kernel_ms": 1.232356850000001
+        },
+        "fwd_bwd_no_grad_x": {
+          "wall_median_ms": 0.6391649367287755,
+          "wall_std_ms": 0.016558647802558293,
+          "event_median_ms": 0.6304799914360046,
+          "event_std_ms": 0.015328792546061041,
+          "peak_inc_MiB": 47.5,
+          "gpu_kernel_ms": 0.6518921499999994
+        }
+      },
+      "local": {
+        "basis_kernel_ms": 0.0466934,
+        "basis_grad_kernel_ms": 0.0160668,
+        "infer": {
+          "wall_median_ms": 0.20445988047868013,
+          "wall_std_ms": 0.003113021460709727,
+          "event_median_ms": 0.19656000286340714,
+          "event_std_ms": 0.0016293446186138136,
+          "peak_inc_MiB": 50.0,
+          "gpu_kernel_ms": 0.18612814999999985
+        },
+        "fwd_bwd_grad_x": {
+          "wall_median_ms": 0.5464375717565417,
+          "wall_std_ms": 0.01042749407088857,
+          "event_median_ms": 0.5374880135059357,
+          "event_std_ms": 0.00897909482297014,
+          "peak_inc_MiB": 98.0009765625,
+          "gpu_kernel_ms": 0.5089331999999996
+        },
+        "fwd_bwd_no_grad_x": {
+          "wall_median_ms": 0.3797016106545925,
+          "wall_std_ms": 0.01768594986109892,
+          "event_median_ms": 0.37089599668979645,
+          "event_std_ms": 0.005254222993130968,
+          "peak_inc_MiB": 47.5,
+          "gpu_kernel_ms": 0.34685584999999997
+        }
+      }
+    },
+    {
+      "B": 256,
+      "I": 64,
+      "O": 64,
+      "G": 64,
+      "k": 3,
+      "spline_weight_bytes": 1097728,
+      "horner_coeff_bytes_fp32": 4194304,
+      "horner_note": "piecewise-polynomial form of the folded spline: G intervals x (k+1) coefficients per edge (vs G+k B-spline coefficients); not implemented",
+      "recurrence": {
+        "basis_kernel_ms": 0.08937105000000004,
+        "infer": {
+          "wall_median_ms": 0.12805848382413387,
+          "wall_std_ms": 0.0029003397015491847,
+          "event_median_ms": 0.12006399780511856,
+          "event_std_ms": 0.0012765836051685838,
+          "peak_inc_MiB": 6.0625,
+          "gpu_kernel_ms": 0.11099755000000022
+        },
+        "fwd_bwd_grad_x": {
+          "wall_median_ms": 0.27717382181435823,
+          "wall_std_ms": 0.002934611289505485,
+          "event_median_ms": 0.2687840014696121,
+          "event_std_ms": 0.001539766215520123,
+          "peak_inc_MiB": 18.4384765625,
+          "gpu_kernel_ms": 0.2584562499999999
+        },
+        "fwd_bwd_no_grad_x": {
+          "wall_median_ms": 0.16825401689857244,
+          "wall_std_ms": 0.002631336191999965,
+          "event_median_ms": 0.15991999953985214,
+          "event_std_ms": 0.0011340637115192973,
+          "peak_inc_MiB": 8.5791015625,
+          "gpu_kernel_ms": 0.14561519999999983
+        }
+      },
+      "local": {
+        "basis_kernel_ms": 0.030323500000000014,
+        "basis_grad_kernel_ms": 0.00394619999999999,
+        "infer": {
+          "wall_median_ms": 0.06944104097783566,
+          "wall_std_ms": 0.002820486006700108,
+          "event_median_ms": 0.061535999178886414,
+          "event_std_ms": 0.0010330507057429866,
+          "peak_inc_MiB": 5.484375,
+          "gpu_kernel_ms": 0.05302940000000002
+        },
+        "fwd_bwd_grad_x": {
+          "wall_median_ms": 0.18304958939552307,
+          "wall_std_ms": 0.023150819932853877,
+          "event_median_ms": 0.17364799976348877,
+          "event_std_ms": 0.02178787482075437,
+          "peak_inc_MiB": 10.5009765625,
+          "gpu_kernel_ms": 0.11881759999999984
+        },
+        "fwd_bwd_no_grad_x": {
+          "wall_median_ms": 0.1380336470901966,
+          "wall_std_ms": 0.006966345998085181,
+          "event_median_ms": 0.12883199751377106,
+          "event_std_ms": 0.005049435475510933,
+          "peak_inc_MiB": 8.5791015625,
+          "gpu_kernel_ms": 0.08702304999999981
+        }
+      }
+    },
+    {
+      "B": 4096,
+      "I": 64,
+      "O": 64,
+      "G": 64,
+      "k": 3,
+      "spline_weight_bytes": 1097728,
+      "horner_coeff_bytes_fp32": 4194304,
+      "horner_note": "piecewise-polynomial form of the folded spline: G intervals x (k+1) coefficients per edge (vs G+k B-spline coefficients); not implemented",
+      "recurrence": {
+        "basis_kernel_ms": 0.7032078999999999,
+        "infer": {
+          "wall_median_ms": 0.8273090934380889,
+          "wall_std_ms": 0.005478143259720929,
+          "event_median_ms": 0.8189919888973236,
+          "event_std_ms": 0.004927707344878694,
+          "peak_inc_MiB": 73.046875,
+          "gpu_kernel_ms": 0.8573636500000003
+        },
+        "fwd_bwd_grad_x": {
+          "wall_median_ms": 1.9651410402730107,
+          "wall_std_ms": 0.04593326896934543,
+          "event_median_ms": 1.9551680088043213,
+          "event_std_ms": 0.012232594878502517,
+          "peak_inc_MiB": 274.0478515625,
+          "gpu_kernel_ms": 1.9425135500000028
+        },
+        "fwd_bwd_no_grad_x": {
+          "wall_median_ms": 0.916615012101829,
+          "wall_std_ms": 0.046811700361707516,
+          "event_median_ms": 0.906143993139267,
+          "event_std_ms": 0.012546123948986227,
+          "peak_inc_MiB": 72.7509765625,
+          "gpu_kernel_ms": 0.8920827000000002
+        }
+      },
+      "local": {
+        "basis_kernel_ms": 0.43900885,
+        "basis_grad_kernel_ms": 0.011812249999999998,
+        "infer": {
+          "wall_median_ms": 0.5412570899352431,
+          "wall_std_ms": 0.0034597629321208847,
+          "event_median_ms": 0.5327199995517731,
+          "event_std_ms": 0.0019006278412809403,
+          "peak_inc_MiB": 73.046875,
+          "gpu_kernel_ms": 0.5234759499999999
+        },
+        "fwd_bwd_grad_x": {
+          "wall_median_ms": 0.7560090161859989,
+          "wall_std_ms": 0.05709054122403396,
+          "event_median_ms": 0.7461919784545898,
+          "event_std_ms": 0.013260807066326603,
+          "peak_inc_MiB": 145.0478515625,
+          "gpu_kernel_ms": 0.7284231500000007
+        },
+        "fwd_bwd_no_grad_x": {
+          "wall_median_ms": 0.6315954960882664,
+          "wall_std_ms": 0.032118604704132026,
+          "event_median_ms": 0.622767984867096,
+          "event_std_ms": 0.02423854023818893,
+          "peak_inc_MiB": 72.7509765625,
+          "gpu_kernel_ms": 0.6070058500000002
+        }
+      }
+    },
+    {
+      "B": 1024,
+      "I": 256,
+      "O": 256,
+      "G": 32,
+      "k": 3,
+      "spline_weight_bytes": 9175040,
+      "horner_coeff_bytes_fp32": 33554432,
+      "horner_note": "piecewise-polynomial form of the folded spline: G intervals x (k+1) coefficients per edge (vs G+k B-spline coefficients); not implemented",
+      "recurrence": {
+        "basis_kernel_ms": 0.36044615,
+        "infer": {
+          "wall_median_ms": 0.5402429960668087,
+          "wall_std_ms": 0.05809879818100204,
+          "event_median_ms": 0.5314399898052216,
+          "event_std_ms": 0.005387448530691702,
+          "peak_inc_MiB": 47.75,
+          "gpu_kernel_ms": 0.5453710500000002
+        },
+        "fwd_bwd_grad_x": {
+          "wall_median_ms": 1.3424799544736743,
+          "wall_std_ms": 0.05119793526028278,
+          "event_median_ms": 1.3327360153198242,
+          "event_std_ms": 0.008903347834792666,
+          "peak_inc_MiB": 149.7509765625,
+          "gpu_kernel_ms": 1.318780350000002
+        },
+        "fwd_bwd_no_grad_x": {
+          "wall_median_ms": 0.7480485364794731,
+          "wall_std_ms": 0.04759848921040079,
+          "event_median_ms": 0.7389279901981354,
+          "event_std_ms": 0.005155948392246057,
+          "peak_inc_MiB": 62.2509765625,
+          "gpu_kernel_ms": 0.7518979500000008
+        }
+      },
+      "local": {
+        "basis_kernel_ms": 0.24041639999999992,
+        "basis_grad_kernel_ms": 0.01171444999999999,
+        "infer": {
+          "wall_median_ms": 0.40583498775959015,
+          "wall_std_ms": 0.059465476837496374,
+          "event_median_ms": 0.3975360095500946,
+          "event_std_ms": 0.006999479414832442,
+          "peak_inc_MiB": 47.75,
+          "gpu_kernel_ms": 0.38668854999999963
+        },
+        "fwd_bwd_grad_x": {
+          "wall_median_ms": 0.7725970353931189,
+          "wall_std_ms": 0.011317456624494711,
+          "event_median_ms": 0.7635520100593567,
+          "event_std_ms": 0.010667888565261546,
+          "peak_inc_MiB": 86.7509765625,
+          "gpu_kernel_ms": 0.7459512500000002
+        },
+        "fwd_bwd_no_grad_x": {
+          "wall_median_ms": 0.6142809288576245,
+          "wall_std_ms": 0.04977574291226606,
+          "event_median_ms": 0.6005119979381561,
+          "event_std_ms": 0.01022805851383617,
+          "peak_inc_MiB": 62.2509765625,
+          "gpu_kernel_ms": 0.5850779499999997
+        }
+      }
+    }
+  ]
+}

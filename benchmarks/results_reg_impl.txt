@@ -1,0 +1,14 @@
+== 1024 256 before
+separate(auto)   peak+=  1141.3 MiB  median=9.617 ms
+== after
+separate(auto)   peak+=    22.5 MiB  median=0.631 ms
+fwr-dense        peak+=  1035.0 MiB  median=9.451 ms
+fwr-fused        peak+=    15.5 MiB  median=0.594 ms
+fwr-checkpoint   peak+=   274.5 MiB  median=11.339 ms
+== 4096 256 before
+separate(auto)   peak+=  4302.3 MiB  median=67.119 ms
+== after
+separate(auto)   peak+=    79.3 MiB  median=2.030 ms
+fwr-dense        peak+=  4140.0 MiB  median=65.629 ms
+fwr-fused        peak+=    51.0 MiB  median=1.846 ms
+fwr-checkpoint   peak+=   306.5 MiB  median=46.527 ms

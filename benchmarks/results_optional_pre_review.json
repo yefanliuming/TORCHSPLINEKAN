@@ -1,0 +1,158 @@
+{
+  "regression": {
+    "baseline": {
+      "params": 15360,
+      "train_step_ms": 0.8225260535255075,
+      "train_peak_inc_MiB": 59.03955078125,
+      "infer_ms": 0.09250408038496971,
+      "infer_samples_per_s": 88558255.65648298,
+      "infer_peak_inc_MiB": 20.765625,
+      "stable": true,
+      "val_rmse_per_seed": [
+        0.008080068044364452,
+        0.01078876480460167,
+        0.011860194616019726
+      ],
+      "val_rmse_median": 0.01078876480460167
+    },
+    "baseline-ref": {
+      "params": 15360,
+      "train_step_ms": 4.980056546628475,
+      "train_peak_inc_MiB": 250.99609375,
+      "infer_ms": 0.9771540062502027,
+      "infer_samples_per_s": 8383530.07571093,
+      "infer_peak_inc_MiB": 126.26171875,
+      "stable": true,
+      "val_rmse_per_seed": [
+        0.008282192051410675,
+        0.008148971945047379,
+        0.014291069470345974
+      ],
+      "val_rmse_median": 0.008282192051410675
+    },
+    "mp-bf16": {
+      "params": 15360,
+      "train_step_ms": 4.984281957149506,
+      "train_peak_inc_MiB": 250.99609375,
+      "infer_ms": 1.0155540658161044,
+      "infer_samples_per_s": 8066532.6207097275,
+      "infer_peak_inc_MiB": 126.01171875,
+      "stable": true,
+      "val_rmse_per_seed": [
+        0.009079277515411377,
+        0.008940628729760647,
+        0.015230784192681313
+      ],
+      "val_rmse_median": 0.009079277515411377
+    },
+    "mp-fp16": {
+      "params": 15360,
+      "train_step_ms": 5.012863432057202,
+      "train_peak_inc_MiB": 250.99609375,
+      "infer_ms": 1.0139853693544865,
+      "infer_samples_per_s": 8079012.032703304,
+      "infer_peak_inc_MiB": 126.01171875,
+      "stable": true,
+      "val_rmse_per_seed": [
+        0.008299155160784721,
+        0.008155710995197296,
+        0.01426299475133419
+      ],
+      "val_rmse_median": 0.008299155160784721
+    },
+    "grouped": {
+      "params": 6144,
+      "train_step_ms": 5.07570244371891,
+      "train_peak_inc_MiB": 251.140625,
+      "infer_ms": 0.991199049167335,
+      "infer_samples_per_s": 8264737.548811974,
+      "infer_peak_inc_MiB": 126.01171875,
+      "stable": true,
+      "val_rmse_per_seed": [
+        0.03179693967103958,
+        0.027912843972444534,
+        0.02687058411538601
+      ],
+      "val_rmse_median": 0.027912843972444534
+    },
+    "lowrank": {
+      "params": 4384,
+      "train_step_ms": 5.016809678636491,
+      "train_peak_inc_MiB": 251.28759765625,
+      "infer_ms": 0.9803989669308066,
+      "infer_samples_per_s": 8355781.958487279,
+      "infer_peak_inc_MiB": 126.01171875,
+      "stable": true,
+      "val_rmse_per_seed": [
+        0.21351628005504608,
+        0.20533587038516998,
+        0.21617922186851501
+      ],
+      "val_rmse_median": 0.21351628005504608
+    }
+  },
+  "pde_poisson_1d": {
+    "baseline-fp64": {
+      "runs": [
+        {
+          "l2_rmse_vs_exact": 0.00010824434118638061,
+          "final_loss": 0.00018702582505145313
+        },
+        {
+          "l2_rmse_vs_exact": 0.0006437815367489988,
+          "final_loss": 0.0004822454129684415
+        },
+        {
+          "l2_rmse_vs_exact": 0.0007262130632175924,
+          "final_loss": 0.00038117172206781437
+        }
+      ],
+      "l2_median": 0.0006437815367489988
+    },
+    "baseline-fp32": {
+      "runs": [
+        {
+          "l2_rmse_vs_exact": 0.0003000306896865368,
+          "final_loss": 0.0002607289934530854
+        },
+        {
+          "l2_rmse_vs_exact": 9.24876585486345e-05,
+          "final_loss": 0.00021379371173679829
+        },
+        {
+          "l2_rmse_vs_exact": 0.00045158606371842325,
+          "final_loss": 0.00038286892231553793
+        }
+      ],
+      "l2_median": 0.0003000306896865368
+    },
+    "mp-bf16": {
+      "runs": [
+        {
+          "l2_rmse_vs_exact": 0.004021811299026012,
+          "final_loss": 0.00415632501244545
+        },
+        {
+          "l2_rmse_vs_exact": 0.006528712809085846,
+          "final_loss": 0.011647740378975868
+        },
+        {
+          "l2_rmse_vs_exact": 0.003105784999206662,
+          "final_loss": 0.004894027020782232
+        }
+      ],
+      "l2_median": 0.004021811299026012
+    }
+  },
+  "args": {
+    "output": "/home/hy/data/DB/projects/torch-spline-kan/benchmarks/results_optional.json",
+    "steps": 1500,
+    "pde_steps": 2000,
+    "seeds": "0,1,2"
+  },
+  "env": {
+    "torch": "2.7.1+cu118",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "command": "/home/hy/miniconda3/envs/dgsm-yolo11/bin/python benchmarks/exp_optional.py"
+  }
+}

@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61", "wheel", "torch>=2.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "torch-spline-kan"
+version = "0.1.0"
+description = "B-spline Kolmogorov–Arnold Networks with C++/CUDA backend"
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["torch>=2.0"]
+keywords = ["KAN", "spline", "neural-network", "CUDA", "PyTorch"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "pytest-cov", "build"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["spline_kan*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+norecursedirs = ["baseline_snapshot", "build", "*.egg-info"]
